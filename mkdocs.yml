@@ -1,0 +1,25 @@
+site_name: Test Mermaid
+
+theme:
+  name: material
+  features:
+    - content.full-width
+
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - js/mermaid-init.js
+extra_css:
+  - stylesheets/extra.css
+
+
+
+
