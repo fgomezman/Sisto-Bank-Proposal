@@ -1,29 +1,11 @@
-/* Quitar límite de ancho del contenido */
+/* Texto */
 .md-content__inner {
+  max-width: none;
+}
+
+/* Mermaid */
+.mermaid {
+  width: 100%;
   max-width: 100%;
 }
-
-/* Contenedor Mermaid */
-.mermaid {
-  width: 100% !important;
-  max-width: 100% !important;
-  display: block;
-  overflow-x: auto;
-  transform: scale(1.2);
-  transform-origin: top center;
-}
-
-/* SVG escalable */
-.mermaid svg {
-  width: 150% !important;
-  height: auto !important;
-}
-
-/* Texto Mermaid */
-.mermaid text {
-  font-size: 20px !important;
-}
-
-
-
 

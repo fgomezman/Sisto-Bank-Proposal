@@ -1,45 +1,46 @@
 # **Propuesta Sito Bank**
 ## **1. Análisis**
 ### KPIs actuales
-
 ```mermaid
 %%{init: {'flowchart': {'layout': 'dagre'}}}%%
-
 flowchart TB
-    KPI5["📈 KPI: Cumplimiento de Normativas bancarias
-    Tiempo de respuesta<br/>
-    Target: Cumple<br/>
-    Actual: No cumple<br/>
-    Status: ⚠️"]
-    KPI6["📈 KPI: Reduccion de escalaciones<br/>
-    Target: <8%><br/>
+
+
+
+    KPI6["📈 KPI: Reducción de escalaciones<br/>
+    Target: <8%<br/>
     Actual: 28%<br/>
     Status: ⚠️"]
+
     KPI1["📈 KPI: Tiempo de Resolución<br/>
-    Target: &lt;24 horas<br/>
+    Target: <24 horas<br/>
     Actual: 8.5 días<br/>
     Status: ⚠️"]
+
     KPI2["📈 KPI: Satisfacción<br/>
     Target: 4.5/5<br/>
     Actual: 1.9/5<br/>
     Status: ⚠️"]
+
     KPI3["📈 KPI: Automatización<br/>
     Target: 75%<br/>
     Actual: 0%<br/>
     Status: ⚠️"]
+
     KPI4["📈 KPI: Casos perdidos<br/>
     Target: 0<br/>
     Status: ⚠️"]
 
+    KPI1:::warning
+    KPI2:::warning
+    KPI3:::warning
+    KPI4:::warning
+    KPI6:::warning
 
-     KPI1:::warning
-     KPI2:::warning
-     KPI3:::warning
-     KPI4:::warning
-     KPI5:::warning
-     KPI6:::warning
     classDef warning fill:#F8D7DA,stroke:#721C24,stroke-width:2px,color:#721C24
+
 ```
+
 
 ### Limitaciones Identificadas
 
@@ -214,16 +215,18 @@ flowchart TB
     Vault -. Secrets Injection .-> K8s
     Cert_Manager -. TLS Certificates .-> Kong
 
-    style Kong fill:#ffcc80,stroke:#ef6c00,stroke-width:3px
-    style Camunda fill:#d1c4e9,stroke:#4527a0,stroke-width:3px
-    style Kafka fill:#c8e6c9,stroke:#2e7d32,stroke-width:4px
-    style Capa_Microservicios fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
-    style Capa_Datos fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    style K8s fill:#b3e5fc,stroke:#0277bd,stroke-width:3px
-    style Capa_Interaccion fill:#e1f5fe,stroke:#01579b,stroke-width:2px
-    style Capa_Orquestacion fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    style Capa_Observabilidad fill:#fce4ec,stroke:#880e4f,stroke-width:2px
-    style Plataforma_DevOps fill:#e0f2f1,stroke:#004d40,stroke-width:2px
+    style Kong fill:#ffcc80,stroke:#ef6c00,stroke-width:3px,color:#212121
+    style Camunda fill:#d1c4e9,stroke:#4527a0,stroke-width:3px,color:#212121
+    style Kafka fill:#c8e6c9,stroke:#2e7d32,stroke-width:4px,color:#212121
+    style Capa_Microservicios fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px,color:#212121
+    style Capa_Datos fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#212121
+    style K8s fill:#b3e5fc,stroke:#0277bd,stroke-width:3px,color:#212121
+    style Capa_Interaccion fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#212121
+    style Capa_Orquestacion fill:#f3e5f5,stroke:#4a148c,stroke-width:2px,color:#212121
+    style Capa_Observabilidad fill:#fce4ec,stroke:#880e4f,stroke-width:2px,color:#212121
+    style Plataforma_DevOps fill:#e0f2f1,stroke:#004d40,stroke-width:2px,color:#212121
+
+
 ```
 ### **Diagrama 2.** Vista detallada de microservicio de inteligencia para Sito Bank.
 
@@ -270,6 +273,7 @@ flowchart TB
     style Almacenamiento fill:#E3F2FD,stroke:#0D47A1,stroke-width:2px,color:#0D47A1
     style MLOps fill:#F3E5F5,stroke:#4A148C,stroke-width:2px,color:#4A148C
 ```
+
 ## **3. Flujos críticos**
 Con la implementación de la anterior arquitectura se espera respecto a los flujos críticos:
 - Bloqueo de tarjeta completamente automatizado.
@@ -320,37 +324,34 @@ Con el ob
 %%{init: {'flowchart': {'layout': 'dagre'}}}%%
 flowchart TB
 
-    KPI5["📈 KPI: Cumplimiento de Normativas bancarias Tiempo de respuesta<br/>
-    Actual: Cumple<br/>
+
+    KPI6["📈 KPI: Reducción de escalaciones<br>
+    Actual: <8%<br>
     Status: ✅🚨"]
 
-    KPI6["📈 KPI: Reduccion de escalaciones<br/>
-    Actual: <8%<br/>
+    KPI1["📈 KPI: Tiempo de Resolución<br>
+    Actual: <24 horas<br>
     Status: ✅🚨"]
 
-    KPI1["📈 KPI: Tiempo de Resolución<br/>
-    Actual: &lt; 24 horas<br/>
+    KPI2["📈 KPI: Satisfacción<br>
+    Actual: 4.5/5<br>
     Status: ✅🚨"]
 
-    KPI2["📈 KPI: Satisfacción<br/>
-    Actual: 4.5/5<br/>
+    KPI3["📈 KPI: Automatización<br>
+    Actual: 75%<br>
     Status: ✅🚨"]
 
-    KPI3["📈 KPI: Automatización<br/>
-    Actual: 75%<br/>
+    KPI4["📈 KPI: Casos perdidos<br>
+    Actual: 0<br>
     Status: ✅🚨"]
-
-    KPI4["📈 KPI: Casos perdidos<br/>
-    Actual: 0<br/>
-    Status: ✅🚨}"]
 
     KPI1:::success
     KPI2:::success
     KPI3:::success
     KPI4:::success
-    KPI5:::success
     KPI6:::success
 
     classDef warning fill:#F8D7DA,stroke:#721C24,stroke-width:2px,color:#721C24
     classDef success fill:#E6F4EA,stroke:#1E7E34,stroke-width:2px,color:#1E7E34
+
 ```

@@ -1,19 +1,17 @@
-/* Quitar límite de ancho del contenedor */
-.md-content__inner {
+/* Contenido a ancho completo */
+.md-content__inner.md-typeset {
+  max-width: 100% !important;
+}
+
+/* Mermaid contenedor */
+.mermaid {
+  width: 100%;
   max-width: 100%;
 }
 
-/* Asegurar que Mermaid use todo el ancho */
-.mermaid {
-  width: 100% !important;
-  max-width: 100% !important;
-  display: block;
-}
-
-/* Escalado correcto del SVG */
+/* SVG real */
 .mermaid svg {
   width: 100% !important;
+  max-width: none !important;
   height: auto !important;
 }
-
-

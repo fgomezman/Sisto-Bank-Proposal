@@ -1,10 +1,9 @@
-site_name: Test Mermaid
+site_name: Sito Bank
 
 theme:
   name: material
   features:
     - content.full-width
-
 
 markdown_extensions:
   - pymdownx.superfences:
@@ -14,11 +13,12 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 
 extra_javascript:
-
-  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
   - js/mermaid-init.js
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+
 extra_css:
   - stylesheets/extra.css
+
 
 
 
