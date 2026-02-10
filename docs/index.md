@@ -230,6 +230,7 @@ flowchart TB
 ```
 </br>
 </br>
+</br>
 
 ### ***Diagrama 2.** Vista detallada de los servicio de inteligencia para clasificación y auditoría en Sito Bank.*
 
