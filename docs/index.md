@@ -1,4 +1,7 @@
 # **Propuesta Sito Bank**
+
+Por: Frank Gómez Manquillo - Candidato a DevSecOps - Sistecrédito.
+
 ## **1. Análisis**
 ### KPIs actuales
 ```mermaid
