@@ -63,9 +63,9 @@ flowchart TB
 - Microservicios especializados por dominio bancario.
 
 ### Objetivo:
-Tener una arquitectura resiliente, escalable, segura, mantenible e integrable con sistemas legacy  y con capacidad de genrar trazabilidad de cada evento pra los cumplientos regulatorios propios de la industria
+Implementar una arquitectura resiliente, escalable, segura, mantenible e integrable con sistemas legacy y con la capacidad de generar trazabilidad de todos los eventos a nivel de infraestructura y microservicios para el cumplimiento de los lineamientos regulatorios propios de la industria.
 
-### **Diagrama 1**. Arquitectura basada en eventos y microsercvicios propuesta para Sito Bank.
+### ***Diagrama 1**. Arquitectura basada en eventos y microsercvicios propuesta para Sito Bank.*
 ```mermaid
 flowchart TB
  subgraph Canales["Canales Omnicanal"]
@@ -228,7 +228,7 @@ flowchart TB
 
 
 ```
-### **Diagrama 2.** Vista detallada de microservicio de inteligencia para Sito Bank.
+### ***Diagrama 2.** Vista detallada de servicio de clasificación y auditoría para Sito Bank.*
 
 ```mermaid
 ---
@@ -244,29 +244,27 @@ config:
     tertiaryBorderColor: '#4A148C'
 ---
 flowchart TB
- subgraph IA[Servicios de IA]
+ subgraph IA["Servicios de IA"]
     direction LR
-        NLP_Service[NLP Service<br>Análisis con LLM]
-        ML_Model[Modelo de ML<br>Clasificación No Supervisada]
-        AutoML[Generación de Reglas]
-        general_ml[Aprendizaje por Refuerzo y Validación de Modelo]
+        NLP_Service["NLP Service<br>Análisis con LLM"]
+        ML_Model["Modelo de ML<br>Clasificación No Supervisada"]
+        AutoML["Generación de Reglas"]
+        general_ml["Aprendizaje por Refuerzo y Validación de Modelo"]
   end
- subgraph Almacenamiento[Capa de Almacenamiento]
-        DataLake[Data Lake<br>Almacenamiento crudo]
-        VectorDB[Base de Datos<br>Vectorial<br><small>Embeddings &amp; Búsqueda</small>]
+ subgraph Almacenamiento["Capa de Almacenamiento"]
+        DataLake["Data Lake<br>Almacenamiento crudo"]
+        VectorDB["Base de Datos<br>Vectorial<br><small>Embeddings &amp; Búsqueda</small>"]
   end
- subgraph MLOps[MLOps - Mejora Continua]
-        Reinforcement[MIcroservicio de Clasificación de casos y Auditoría]
+ subgraph MLOps["MLOps - Mejora Continua"]
+        Reinforcement["MIcroservicio de Clasificación de casos y Auditoría"]
   end
-    Ticket[Caso de Entrada] --> NLP_Service
-    NLP_Service --> DataLake
+    Ticket["Caso de Entrada"] --> NLP_Service
+    NLP_Service --> DataLake & n1["Ticket con Notificación"]
     DataLake --> ML_Model & general_ml
     ML_Model --> AutoML & VectorDB
     AutoML --> general_ml
     general_ml --> Reinforcement
     VectorDB --> NLP_Service
-    NLP_Service --> n1[Ticket con Notificación]
-
 
     style Ticket fill:#FFF3E0,stroke:#E65100,stroke-width:2px,color:#E65100
     style IA fill:#E8F5E8,stroke:#1B5E20,stroke-width:3px,color:#1B5E20
@@ -276,6 +274,7 @@ flowchart TB
 
 ## **3. Flujos críticos**
 Con la implementación de la anterior arquitectura se espera respecto a los flujos críticos:
+
 - Bloqueo de tarjeta completamente automatizado.
 - Aprobación de créditos de forma semiautomatizada con validación humana.
 - Reclamos por transacción no reconocidas con intervención humana mínima.
@@ -305,21 +304,20 @@ Con la implementación de la anterior arquitectura se espera respecto a los fluj
 ### Fase 4. Mes 10-12: Optimización
 1. Alcanzar 75% automatización.
 2. Sistema de mejora continua con MLOps.
-3. Dashboard ejecutivo de KPIs
-4. Documentación completa
+3. Dashboard ejecutivo de KPIs.
+4. Documentación completa.
 
 
 ## **5. Estrategias DevSecOps**
-- Implementación como código desde la fase 1 de las Políticas regulatorias
-- Auditoría automática en cada deploy
-- audotoría 
+- Implementación como código desde la Fase I de las Políticas regulatorias.
+- Auditoría automática en cada deploy.
+- Monitoreo y generación de alertas para respuestas oportunas.
+- Gestión continua de vulnerabilidades.
+- Promoción del principio de responsabilidad compartida en la seguridad entre los diferentes equipos.
 
 
-## **6. Consideraciones de compliance**
-
-
-## **7. Métricas de éxito y Monitoreo**
-Con el ob
+## **6. Métricas de éxito y Monitoreo**
+### KPIs objetivo.
 ```mermaid
 %%{init: {'flowchart': {'layout': 'dagre'}}}%%
 flowchart TB
@@ -355,3 +353,10 @@ flowchart TB
     classDef success fill:#E6F4EA,stroke:#1E7E34,stroke-width:2px,color:#1E7E34
 
 ```
+
+Con el objetivo de dar seguimientos al desempeño de la planificación antes propuesta, se tendrán las siguientes métricas basadas en los stakeholders:
+
+- Calificación  periodica por desempeño en la implementación de las buenas prácticas de seguridad en los equipos.
+- Evaluación de la UX a través de encuestas de satisfacción por los canales de atención.
+- Evaluación de la mejora continua a través de auditorías internas (ISO 27001) y cumplimiento de los estándares NIST, SOC 2, SOC2-Tyep II.
+- Revisón de los modelos de ML respecto a los resultados obtenidos en las auditorías internas. 
