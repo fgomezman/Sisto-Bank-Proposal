@@ -1,11 +1,17 @@
-/* Texto */
-.md-content__inner {
-  max-width: none;
+/* Contenido a ancho completo */
+.md-content__inner.md-typeset {
+  max-width: 100% !important;
 }
 
-/* Mermaid */
+/* Mermaid contenedor */
 .mermaid {
   width: 100%;
   max-width: 100%;
 }
 
+/* SVG real */
+.mermaid svg {
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+}

@@ -228,7 +228,10 @@ flowchart TB
 
 
 ```
-### ***Diagrama 2.** Vista detallada de servicio de clasificación y auditoría para Sito Bank.*
+</br>
+</br>
+
+### ***Diagrama 2.** Vista detallada de los servicio de inteligencia para clasificación y auditoría en Sito Bank.*
 
 ```mermaid
 ---
