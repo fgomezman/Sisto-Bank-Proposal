@@ -30,5 +30,11 @@ jobs:
         run: |
           pip install mkdocs mkdocs-material pymdown-extensions
 
+      - name: Debug files
+        run: |
+          pwd
+          ls -la
+
+
       - name: Deploy with MkDocs gh-deploy
         run: mkdocs gh-deploy --force
