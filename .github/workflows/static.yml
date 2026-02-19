@@ -50,3 +50,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+      - name: Debug files
+        run: |
+          pwd
+          ls -la
