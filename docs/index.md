@@ -45,7 +45,7 @@ flowchart TB
 ```
 
 
-### Limitaciones Identificadas
+### Limitaciones Identificadas segun caso de estudio
 
    - Regulatorios (trazabilidad, auditabilidad)
    - Técnicos (escalabilidad, integración)
